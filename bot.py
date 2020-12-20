@@ -42,7 +42,11 @@ async def on_message(message):
       a_file. close()
 
   if message.content.startswith('OP'):
-    await message.channel.send('Stop it!')            
+    await message.channel.send('Stop it!')
+
+  if message.content.startswith('hey'):
+      msg = 'Hello {0.author.mention}'.format(message)
+      await bot.send_message(message.channel, msg)               
 
   if message.content.startswith('!randomnum'):
     await message.channel.send(randint(0, 1000))
