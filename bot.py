@@ -11,7 +11,7 @@ bot = commands.Bot(command_prefix=PREFIX, description='BeepBoop')
 
 @bot.event
 async def on_ready():
-  await bot.change_presence(activity=discord.Game(name="a game"))
+  await bot.change_presense(status=discord.Status.online, activity = discord.Activity(type = discord.ActivityType.watching, name ="Cat Vidoes"))
   print('We have logged in as {0.user}'.format(bot))
 
 @bot.event
