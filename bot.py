@@ -2,6 +2,7 @@ import discord
 from datetime import date
 from discord.ext import commands
 from random import randint
+from random import choice
 import os
 
 a_file = open("script.txt")
@@ -61,6 +62,10 @@ async def on_message(message):
 
   if message.content.startswith('hello'):
     await message.channel.send('https://cataas.com/cat/says/hello%20world!')
+
+  if message.content.startswith('best'):
+    user = choice(message.channel.guild.members)
+    bot.send_message(message.channel, ' : %s is the best ' % user.mention)
 
 bot.run(os.getenv('TOKEN'))
 
