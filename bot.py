@@ -1,10 +1,14 @@
 import discord
+from discord.ext import commands
+from datetime import datetime
 from random import randint
 import os
 
 illegal_words = ["bitch", "ass", "fuck"]
 
 client = discord.Client()
+bot = commands.Bot(command_prefix="!")
+
 
 @client.event
 async def on_ready():
