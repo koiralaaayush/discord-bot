@@ -5,18 +5,19 @@ import os
 
 illegal_words = ["bitch", "ass", "fuck"]
 
-client = discord.Client()
+PREFIX = ("$")
+bot = commands.Bot(command_prefix=PREFIX, description='BeepBoop')
 
 
-@client.event
+@bot.event
 async def on_ready():
-  await client.change_presense(status=discord.Status.online, activity = discord.Activity(type = discord.ActivityType.watching, name ="Cat Vidoes"))
-  print('We have logged in as {0.user}'.format(client))
+  await bot.change_presence(activity=discord.Game(name="a game"))
+  print('We have logged in as {0.user}'.format(bot))
 
-@client.event
+@bot.event
 async def on_message(message):
 
-  if message.author == client.user:
+  if message.author == bot.user:
     return
 
   if message.content.startswith('shrug'):
@@ -34,5 +35,5 @@ async def on_message(message):
   if message.content.startswith('hello'):
     await message.channel.send('https://cataas.com/cat/says/hello%20world!')
 
-client.run(os.getenv('TOKEN'))
+bot.run(os.getenv('TOKEN'))
 
