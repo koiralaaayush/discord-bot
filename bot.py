@@ -1,7 +1,7 @@
 import discord
 import os
 
-illegal_words = ["apple", "pear", "banana"]
+illegal_words = ["bitch", "ass", "fuck"]
 
 client = discord.Client()
 
