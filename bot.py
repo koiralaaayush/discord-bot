@@ -5,14 +5,12 @@ import os
 
 illegal_words = ["bitch", "ass", "fuck"]
 
-PREFIX = ("$")
-bot = commands.Bot(command_prefix=PREFIX, description='BeepBoop')
-
+bot = commands.Bot(command_prefix="$", description='BeepBoop')
 
 @bot.event
 async def on_ready():
-  activity = discord.Game(name="Just")
-  await bot.change_presence(status=discord.Status.idle, activity=activity)
+  await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name="Cat Videos"))
+  print('We have logged in as {0.user}'.format(bot))
 
 @bot.event
 async def on_message(message):
