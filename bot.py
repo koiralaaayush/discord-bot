@@ -44,9 +44,9 @@ async def on_message(message):
   if message.content.startswith('OP'):
     await message.channel.send('Stop it!')
 
-  if message.content.startswith('hey'):
-      msg = 'Hello {0.author.mention}'.format(message)
-      await bot.send_message(message.channel, msg)               
+  if message.content.startswith('best'):
+      myid = '<@201909896357216256>'
+      await bot.send_message(message.channel, ' : %s the best ' % myid)               
 
   if message.content.startswith('!randomnum'):
     await message.channel.send(randint(0, 1000))
