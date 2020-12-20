@@ -3,6 +3,9 @@ from discord.ext import commands
 from random import randint
 import os
 
+a_file = open("script.txt")
+lines = a_file.readlines()
+
 illegal_words = ["bitch", "ass", "fuck"]
 
 bot = commands.Bot(command_prefix="$", description='BeepBoop')
@@ -33,8 +36,9 @@ async def on_message(message):
   if message.content.startswith('WTF'):
     await message.channel.send('Stop it!')
 
-  if message.content.startswith('op'):
-    await message.channel.send('Stop it!')
+  if message.content.startswith('beemovie'):
+    for line in lines:
+      await message.channel.send(line)
 
   if message.content.startswith('OP'):
     await message.channel.send('Stop it!')            
