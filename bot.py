@@ -21,8 +21,23 @@ async def on_message(message):
   if message.content.startswith('shrug'):
     await message.channel.send('¯\_(ツ)_/¯')
 
-  if message.content.startswith('ping'):
-    await message.channel.send('pong')
+  if message.content.startswith('LOL'):
+    await message.channel.send('Stop it!')
+
+  if message.content.startswith('l0l'):
+    await message.channel.send('Stop it!')
+
+  if message.content.startswith('GG'):
+    await message.channel.send('Stop it!')
+
+  if message.content.startswith('WTF'):
+    await message.channel.send('Stop it!')
+
+  if message.content.startswith('op'):
+    await message.channel.send('Stop it!')
+
+  if message.content.startswith('OP'):
+    await message.channel.send('Stop it!')            
 
   if message.content.startswith('!randomnum'):
     await message.channel.send(randint(0, 1000))
