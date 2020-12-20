@@ -17,7 +17,7 @@ async def on_message(message):
   if message.content.startswith('shrug'):
     await message.channel.send('¯\_(ツ)_/¯')
 
-  if message.content('ping'):
+  if message.content.says('ping'):
     await message.channel.send('pong')
 
   if any(word in message.content for word in illegal_words):
