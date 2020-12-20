@@ -39,6 +39,7 @@ async def on_message(message):
   if message.content.startswith('beemovie'):
     for line in lines:
       await message.channel.send(line)
+      a_file. close()
 
   if message.content.startswith('OP'):
     await message.channel.send('Stop it!')            
