@@ -1,6 +1,4 @@
 import discord
-import os
-
 illegal_words = ["apple", "pear", "banana"]
 
 client = discord.Client()
