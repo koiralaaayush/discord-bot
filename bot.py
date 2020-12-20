@@ -9,7 +9,7 @@ client = discord.Client()
 @client.event
 async def on_ready():
   print('We have logged in as {0.user}'.format(client))
-  client.user.setActivity('YouTube', { type: 'WATCHING' });
+  await client.change_presense(status=discord.Status.idle, activity=discord.Watching('Cat videos'))
 
 @client.event
 async def on_message(message):
