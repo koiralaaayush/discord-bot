@@ -39,6 +39,9 @@ async def on_message(message):
   if message.content.startswith('WTF'):
     await message.channel.send('Stop it!')
 
+  if message.content.startswith('bot'):
+    await message.channel.send('How can I help you today?')
+
   if message.content.startswith('today'):
     await message.channel.send(today)
 
