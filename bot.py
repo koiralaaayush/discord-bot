@@ -1,24 +1,22 @@
 import discord
-illegal_words = ["apple", "pear", "banana"]
+from discord.ext import commands
+from discord.ext.commands import Bot
+from discord.utils import get
+import os
+import asyncio
 
 client = discord.Client()
 
 @client.event
 async def on_ready():
-  print('We have logged in as {0.user}'.format(client))
+    print("We are ready to rol out".format(client))
+
 
 @client.event
 async def on_message(message):
-  if message.author == client.user:
-    return
-
-  if message.content.startswith('shrug'):
-    await message.channel.send('¯\_(ツ)_/¯')
-
-  if any(word in message.content for word in illegal_words):
-     await message.delete()
-
-  if message.content.startswith('hello'):
-    await message.channel.send('https://cataas.com/cat/says/hello%20world!')
-
-client.run(os.environ['TOKEN'])
+    if message.author == client.user:
+        return
+    if message.content.startswith("%hello"):
+        await message.channel.send("Hey there buddy!")
+        
+client.run(os.getenv('TOKEN'))
