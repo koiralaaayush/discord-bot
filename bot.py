@@ -5,6 +5,7 @@ import os
 illegal_words = ["bitch", "ass", "fuck"]
 
 client = discord.Client()
+client.user.setActivity('YouTube', { type: 'WATCHING' });
 
 @client.event
 async def on_ready():
