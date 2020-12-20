@@ -65,7 +65,7 @@ async def on_message(message):
 
   if message.content.startswith('best'):
     user = choice(message.channel.guild.members)
-    bot.send_message(message.channel, ' : %s is the best ' % user.mention)
+    await bot.send_message(message.channel, ' : %s is the best ' % user.mention)
 
 bot.run(os.getenv('TOKEN'))
 
