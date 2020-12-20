@@ -5,14 +5,15 @@ import os
 illegal_words = ["bitch", "ass", "fuck"]
 
 client = discord.Client()
-client.user.setActivity('YouTube', { type: 'WATCHING' });
 
 @client.event
 async def on_ready():
   print('We have logged in as {0.user}'.format(client))
+  client.user.setActivity('YouTube', { type: 'WATCHING' });
 
 @client.event
 async def on_message(message):
+
   if message.author == client.user:
     return
 
