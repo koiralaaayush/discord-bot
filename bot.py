@@ -1,13 +1,13 @@
 import discord
-from datetime import datetime
+from datetime import date
 from discord.ext import commands
 from random import randint
 import os
 
 a_file = open("script.txt")
 lines = a_file.readlines()
-now = datetime.now()
-current_time = now.strftime("%H:%M:%S")
+
+today = date.today()
 
 illegal_words = ["bitch", "ass", "fuck"]
 
@@ -39,8 +39,8 @@ async def on_message(message):
   if message.content.startswith('WTF'):
     await message.channel.send('Stop it!')
 
-  if message.content.startswith('time'):
-    await message.channel.send("Current Time =", current_time)
+  if message.content.startswith('today'):
+    await message.channel.send(today)
 
   if message.content.startswith('beemovie'):
     for line in lines:
