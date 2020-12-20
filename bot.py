@@ -1,4 +1,5 @@
 import discord
+from random import randint
 import os
 
 illegal_words = ["bitch", "ass", "fuck"]
@@ -19,6 +20,9 @@ async def on_message(message):
 
   if message.content.startswith('ping'):
     await message.channel.send('pong')
+
+  if message.content.startswith('!randomnum'):
+    await message.channel.send(randint(0, 1000))
 
   if any(word in message.content for word in illegal_words):
      await message.delete()
