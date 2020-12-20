@@ -42,11 +42,7 @@ async def on_message(message):
       a_file. close()
 
   if message.content.startswith('OP'):
-    await message.channel.send('Stop it!')
-
-  if message.content.startswith('best'):
-      myid = '<@201909896357216256>'
-      await bot.send_message(message.channel, ' : %s the best ' % myid)               
+    await message.channel.send('Stop it!')              
 
   if message.content.startswith('!randomnum'):
     await message.channel.send(randint(0, 1000))
