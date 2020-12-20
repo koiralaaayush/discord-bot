@@ -1,18 +1,16 @@
 import discord
 from discord.ext import commands
-from datetime import datetime
 from random import randint
 import os
 
 illegal_words = ["bitch", "ass", "fuck"]
 
 client = discord.Client()
-bot = commands.Bot(command_prefix="!")
 
 
 @client.event
 async def on_ready():
-  await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name="a movie"))
+  await client.change_presense(activity=discord.Activity(type = discord.ActivityType.watching, name = "a movie"))
   print('We have logged in as {0.user}'.format(client))
 
 @client.event
