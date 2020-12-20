@@ -21,5 +21,4 @@ async def on_message(message):
   if message.content.startswith('hello'):
     await message.channel.send('https://cataas.com/cat/says/hello%20world!')
 
-client.run(NzkwMTEyOTI0MzI4NTI1ODQ0.X974AA.2-B_-D2dO7vejmw4CsNIShfwdz4)
-
+client.run(os.environ['TOKEN'])
