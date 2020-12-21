@@ -11,14 +11,14 @@ today = date.today()
  
 bot = commands.Bot(command_prefix = ">")
 
-@bot.command()
-async def foo(ctx, arg):
-    await ctx.send(arg)
-
 @bot.event
 async def on_ready():
   await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name="Cat Videos"))
   print('We have logged in as {0.user}'.format(bot))
+
+@bot.command()
+async def foo(ctx, arg):
+  await ctx.send(arg)
 
 @bot.event
 async def on_message(message):
