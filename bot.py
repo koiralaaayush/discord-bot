@@ -63,13 +63,14 @@ async def on_message(message):
   if message.content.startswith('hello'):
     await message.channel.send('https://cataas.com/cat/says/hello%20world!')
 
-@bot.command()
-async def echo(*args):
-  output =''
-  for word in args:
-    output += word
-    output += ' '
-  await bot.say(output)
+@bot.command(pass_context=True)
+async def clear(ctx, amount =100):
+  channel = ctx.message.channel
+  messages = []
+  async for message in bot.logs_from(channel, limit = int(amount)):
+    message.append(message)
+  await bot.delete_messages(messages)
+  await bot.say('Messages deleted.')
 
 bot.run(os.getenv('TOKEN'))
 
