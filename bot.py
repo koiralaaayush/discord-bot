@@ -42,5 +42,11 @@ async def on_message(message):
 
     await bot.process_commands(message)
 
+
+@bot.command(pass_context=True)
+async def ping(ctx):
+  msg = "Pong :CustomEmoji: {0.author.mention}".format(ctx.message)
+  await bot.say(msg)
+
 bot.run(os.getenv('TOKEN'))
 
