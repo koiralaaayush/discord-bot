@@ -12,7 +12,7 @@ today = date.today()
 
 illegal_words = ["bitch", "ass", "fuck"]
 
-bot = commands.Bot(command_prefix="$", description='BeepBoop')
+bot = commands.Bot(command_prefix = '$')
 
 @bot.event
 async def on_ready():
