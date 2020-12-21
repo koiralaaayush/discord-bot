@@ -1,2 +1,2 @@
-# discord-bot
-TheBeepBoopBot
+# discord-client
+TheBeepBoopclient

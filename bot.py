@@ -9,24 +9,24 @@ a_file = open("script.txt")
 lines = a_file.readlines()
 today = date.today()
  
-bot = commands.Bot(command_prefix = ">")
+client = commands.client(command_prefix = ">")
 
-@bot.event
+@client.event
 async def on_ready():
-  await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name="Cat Videos"))
-  print('We have logged in as {0.user}'.format(bot))
+  await client.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name="Cat Videos"))
+  print('We have logged in as {0.user}'.format(client))
 
-@bot.command()
+@client.command()
 async def test(ctx):
   await ctx.scend("123")
 
-@bot.event
+@client.event
 async def on_message(message):
 
   if message.content.startswith('shrug'):
     await message.channel.send('¯\_(ツ)_/¯')
 
-  if message.content.startswith('bot'):
+  if message.content.startswith('client'):
     await message.channel.send('How can I help you today?')
 
   if message.content.startswith('today'):
@@ -43,7 +43,7 @@ async def on_message(message):
   if message.content.startswith('hello'):
     await message.channel.send('https://cataas.com/cat/says/hello%20world!')
 
-    await bot.process_commands(message)
+    await client.process_commands(message)
 
-bot.run(os.getenv('TOKEN'))
+client.run(os.getenv('TOKEN'))
 
