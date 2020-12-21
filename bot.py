@@ -7,15 +7,18 @@ import os
 
 a_file = open("script.txt")
 lines = a_file.readlines()
-
 today = date.today()
-
-bot = commands.Bot(command_prefix = '.')
+ 
+bot = commands.Bot(command_prefix = ">")
 
 @bot.event
 async def on_ready():
   await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name="Cat Videos"))
   print('We have logged in as {0.user}'.format(bot))
+
+@bot.command()
+async def test(ctx):
+    await ctx.scend("123")
 
 @bot.event
 async def on_message(message):
@@ -41,12 +44,6 @@ async def on_message(message):
     await message.channel.send('https://cataas.com/cat/says/hello%20world!')
 
     await bot.process_commands(message)
-
-
-@bot.command(pass_context=True)
-async def ping(ctx):
-  msg = "Pong :CustomEmoji: {0.author.mention}".format(ctx.message)
-  await bot.say(msg)
 
 bot.run(os.getenv('TOKEN'))
 
