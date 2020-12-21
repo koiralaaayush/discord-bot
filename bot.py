@@ -9,7 +9,7 @@ a_file = open("script.txt")
 lines = a_file.readlines()
 today = date.today()
  
-client = commands.client(command_prefix = ">")
+client = commands.Bot(command_prefix = ">")
 
 @client.event
 async def on_ready():
