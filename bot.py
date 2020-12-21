@@ -10,8 +10,6 @@ lines = a_file.readlines()
 
 today = date.today()
 
-illegal_words = ["bitch", "ass", "fuck"]
-
 bot = commands.Bot(command_prefix = '$')
 
 @bot.event
@@ -22,23 +20,8 @@ async def on_ready():
 @bot.event
 async def on_message(message):
 
-  if message.author == bot.user:
-    return
-
   if message.content.startswith('shrug'):
     await message.channel.send('¯\_(ツ)_/¯')
-
-  if message.content.startswith('LOL'):
-    await message.channel.send('Stop it!')
-
-  if message.content.startswith('l0l'):
-    await message.channel.send('Stop it!')
-
-  if message.content.startswith('GG'):
-    await message.channel.send('Stop it!')
-
-  if message.content.startswith('WTF'):
-    await message.channel.send('Stop it!')
 
   if message.content.startswith('bot'):
     await message.channel.send('How can I help you today?')
@@ -49,16 +32,10 @@ async def on_message(message):
   if message.content.startswith('beemovie'):
     for line in lines:
       await message.channel.send(line)
-      a_file. close()
-
-  if message.content.startswith('OP'):
-    await message.channel.send('Stop it!')              
-
+      a_file. close()           
+      
   if message.content.startswith('!randomnum'):
     await message.channel.send(randint(0, 1000))
-
-  if any(word in message.content for word in illegal_words):
-     await message.delete()
 
   if message.content.startswith('hello'):
     await message.channel.send('https://cataas.com/cat/says/hello%20world!')
