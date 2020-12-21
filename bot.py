@@ -18,7 +18,7 @@ async def on_ready():
 
 @bot.command()
 async def foo(ctx, arg):
-  await ctx.send(arg)
+  await ctx.send("HI")
 
 @bot.event
 async def on_message(message):
