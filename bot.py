@@ -33,12 +33,16 @@ async def on_message(message):
     for line in lines:
       await message.channel.send(line)
       a_file. close()           
-      
+
   if message.content.startswith('!randomnum'):
     await message.channel.send(randint(0, 1000))
 
   if message.content.startswith('hello'):
     await message.channel.send('https://cataas.com/cat/says/hello%20world!')
+
+@bot.command()
+async def emoji(ctx):
+  await ctx.send("GG")
 
 bot.run(os.getenv('TOKEN'))
 
