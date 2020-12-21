@@ -18,7 +18,7 @@ async def on_ready():
 
 @bot.command()
 async def test(ctx):
-    await ctx.scend("123")
+  await ctx.scend("123")
 
 @bot.event
 async def on_message(message):
