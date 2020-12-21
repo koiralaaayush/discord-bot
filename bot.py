@@ -63,9 +63,13 @@ async def on_message(message):
   if message.content.startswith('hello'):
     await message.channel.send('https://cataas.com/cat/says/hello%20world!')
 
-  if message.content.startswith('best'):
-    user = choice(message.channel.guild.members)
-    await bot.send_message(message.channel, ' : %s is the best ' % user.mention)
+@bot.echo
+async def echo(*args):
+  output =''
+  for word in args:
+    output += word
+    output += ' '
+  await bot.say(output)
 
 bot.run(os.getenv('TOKEN'))
 
